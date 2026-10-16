@@ -24,7 +24,9 @@ function M.toggle()
     terminal_buf = vim.api.nvim_create_buf(false, true)
     vim.bo[terminal_buf].bufhidden = 'hide'
     vim.api.nvim_win_set_buf(0, terminal_buf)
-    vim.cmd 'terminal'
+    local fish = vim.fn.exepath('fish')
+    local shell = fish ~= '' and fish or vim.o.shell
+    vim.fn.jobstart({ shell }, { term = true })
   end
 
   vim.cmd 'startinsert'
