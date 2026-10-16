@@ -210,6 +210,7 @@ do
   }
 
   vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+  vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Explain diagnostic' })
 
   vim.keymap.set('n', '<leader>nn', '<cmd>tabnew<CR>', { desc = '[N]ew tab' })
   vim.keymap.set('n', '<leader>nx', '<cmd>tabclose<CR>', { desc = 'Close tab' })
