@@ -748,6 +748,7 @@ do
   --  See `:help lsp-config` for information about keys and how to configure
   ---@type table<string, vim.lsp.Config>
   local servers = {
+    copilot = require('custom.copilot').config,
     bashls = {},
     dockerls = {},
     yamlls = {
@@ -857,6 +858,8 @@ do
 
   require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
+  require('custom.copilot').setup()
+
   for name, server in pairs(servers) do
     vim.lsp.config(name, server)
     vim.lsp.enable(name)
@@ -946,6 +949,12 @@ do
       --
       -- See `:help blink-cmp-config-keymap` for defining your own keymap
       preset = 'default',
+
+      ['<Tab>'] = {
+        'snippet_forward',
+        function() return vim.lsp.inline_completion.get() end,
+        'fallback',
+      },
 
       -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
       --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
