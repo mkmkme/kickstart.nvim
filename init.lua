@@ -441,6 +441,8 @@ do
     italic = { comments = false },
     overrides = {
       ComplHint = { fg = '#a89984' },
+      Ruler80 = { fg = '#3c3836' },
+      Ruler120 = { fg = '#665c54' },
     },
   }
 
