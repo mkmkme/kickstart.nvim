@@ -384,6 +384,9 @@ do
         end
       end, { desc = 'Jump to previous git [c]hange', buf = bufnr })
 
+      vim.keymap.set('n', ']s', '<cmd>Gitsigns nav_hunk next target=staged<CR>', { desc = 'Jump to next staged hunk', buffer = bufnr })
+      vim.keymap.set('n', '[s', '<cmd>Gitsigns nav_hunk prev target=staged<CR>', { desc = 'Jump to previous staged hunk', buffer = bufnr })
+
       -- Visual mode actions
       vim.keymap.set('v', '<leader>hs', function() gitsigns.stage_hunk { vim.fn.line '.', vim.fn.line 'v' } end, { desc = 'git [s]tage hunk', buf = bufnr })
       vim.keymap.set('v', '<leader>hr', function() gitsigns.reset_hunk { vim.fn.line '.', vim.fn.line 'v' } end, { desc = 'git [r]eset hunk', buf = bufnr })
