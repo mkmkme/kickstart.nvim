@@ -750,6 +750,7 @@ do
   local servers = {
     copilot = require('custom.copilot').config,
     bashls = {},
+    neocmake = {},
     dockerls = {},
     yamlls = {
       settings = {
