@@ -749,6 +749,15 @@ do
   ---@type table<string, vim.lsp.Config>
   local servers = {
     bashls = {},
+    yamlls = {
+      settings = {
+        yaml = {
+          schemaStore = { enable = true },
+          validate = true,
+          format = { enable = false },
+        },
+      },
+    },
     clangd = {
       cmd = { 'clangd', '--background-index' },
     },
