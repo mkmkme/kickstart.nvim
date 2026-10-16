@@ -749,6 +749,7 @@ do
   ---@type table<string, vim.lsp.Config>
   local servers = {
     bashls = {},
+    dockerls = {},
     yamlls = {
       settings = {
         yaml = {
