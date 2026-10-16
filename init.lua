@@ -748,6 +748,16 @@ do
   ---@type table<string, vim.lsp.Config>
   local servers = {
     -- clangd = {},
+    basedpyright = {
+      settings = {
+        basedpyright = {
+          analysis = {
+            typeCheckingMode = 'standard',
+            diagnosticMode = 'openFilesOnly',
+          },
+        },
+      },
+    },
     -- gopls = {},
     -- pyright = {},
     -- tsc = {},
