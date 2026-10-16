@@ -6,8 +6,6 @@ local lint = require 'lint'
 lint.linters_by_ft = {
   markdown = { 'markdownlint' },
   python = { 'ruff' },
-  sh = { 'shellcheck' },
-  bash = { 'shellcheck' },
   yaml = { 'yamllint' },
   dockerfile = { 'hadolint' },
 }
