@@ -769,7 +769,14 @@ do
     --    https://github.com/mrcjkb/rustaceanvim
     --
     -- But for many setups, the LSP (`rust_analyzer`) will work just fine
-    -- rust_analyzer = {},
+    rust_analyzer = {
+      settings = {
+        ['rust-analyzer'] = {
+          checkOnSave = true,
+          check = { command = 'clippy' },
+        },
+      },
+    },
 
     stylua = {}, -- Used to format Lua code
 
