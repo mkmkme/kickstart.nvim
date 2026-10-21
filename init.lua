@@ -340,6 +340,19 @@ local function gh(repo) return 'https://github.com/' .. repo end
 -- ============================================================
 do
   -- [[ Installing and Configuring Plugins ]]
+  -- Autolock passes Ctrl+h/j/k/l to Neovim; at a split edge, navigate Zellij.
+  -- Outside Zellij, keep the ordinary split mappings defined above.
+  -- if vim.env.ZELLIJ then
+  --   vim.g.zellij_navigator_no_default_mappings = 1
+  --   vim.pack.add {
+  --     { src = gh 'fresh2dev/zellij.vim', version = '6b80425dc93963a65aef7e9518deaa4dadf6865e' },
+  --   }
+  --   vim.keymap.set('n', '<C-h>', '<cmd>ZellijNavigateLeft<CR>', { silent = true, desc = 'Navigate left across Neovim/Zellij' })
+  --   vim.keymap.set('n', '<C-j>', '<cmd>ZellijNavigateDown<CR>', { silent = true, desc = 'Navigate down across Neovim/Zellij' })
+  --   vim.keymap.set('n', '<C-k>', '<cmd>ZellijNavigateUp<CR>', { silent = true, desc = 'Navigate up across Neovim/Zellij' })
+  --   vim.keymap.set('n', '<C-l>', '<cmd>ZellijNavigateRight<CR>', { silent = true, desc = 'Navigate right across Neovim/Zellij' })
+  -- end
+
   --
   -- To install a plugin simply call `vim.pack.add` with its git url.
   -- This will download the default branch of the plugin, which will usually be `main` or `master`
